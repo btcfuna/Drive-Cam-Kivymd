@@ -7,7 +7,7 @@ title = Drive Cam
 package.name = Drive Cam
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.test
+package.domain = org.drivecam
 
 # (str) Source code where the main.py live
 source.dir = .
