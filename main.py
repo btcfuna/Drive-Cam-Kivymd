@@ -44,7 +44,7 @@ try:
 except:
     toast('Error 101')
 try:
-    request_permissions([Permission.INTERNET,Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE,Permission.CAMERA])
+    request_permissions([Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE,Permission.CAMERA])
 except:
     toast('Error 102')
 
