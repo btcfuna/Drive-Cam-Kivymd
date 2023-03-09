@@ -1,0 +1,74 @@
+<SendPage>:
+    on_enter:root.enter()
+    MDBoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            id:tbar
+            title:app.nam
+            left_action_items: [["camera", lambda x: root.camera()]]
+        
+        FitImage:
+            id:pic
+        
+    MDRaisedButton:
+        text:'Save Image To Drive'
+        size_hint: None,None
+        size: dp(50),dp(20)
+        pos_hint: {'center_x': .5, 'center_y': .1}
+        on_release: root.save()
+
+<CameraWin>:
+    on_enter:root.enter()
+    MDBoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            id:tbar
+            title:'File Manager Camera'
+            elevation: 4
+            right_action_items:[['home', lambda x: root.home()]]
+        
+        MDLabel:
+            id:time
+            text:''
+            size_hint_y:None
+            height:50
+            
+        Camera:
+            id: camera
+            resolution: (720, 720)
+            play: True
+            index:0
+            canvas.before:
+                PushMatrix
+                Rotate:
+                    angle: -90
+                    origin: self.center
+            canvas.after:
+                PopMatrix
+            
+        MDBottomAppBar:
+            MDTopAppBar:
+                icon: "camera-iris"
+                type: "bottom"
+                mode: "center"
+                on_action_button:root.capture()
+                right_action_items:[['camera-flip', lambda x: root.flip()],['alarm', lambda x: root.timer()]]
+                
+<TimerDia>:
+    orientation:'vertical'
+    size_hint_y:None
+    height:'70dp'
+    
+    Slider:
+        id: slider
+        min: 0
+        max: 20
+        step: 1
+        orientation: 'horizontal'
+    
+    MDTextField:
+        text:str(slider.value)
+        multiline:False
+        id:sval
+        size_hint_x:None
+        width:100
