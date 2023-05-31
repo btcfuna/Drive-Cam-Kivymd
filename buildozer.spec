@@ -4,7 +4,7 @@
 title = Drive Cam
 
 # (str) Package name
-package.name = Drive Cam
+package.name = drivecam
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
