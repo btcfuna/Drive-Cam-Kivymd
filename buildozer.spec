@@ -4,10 +4,10 @@
 title = Drive Cam
 
 # (str) Package name
-package.name = drivecam
+package.name = Drive Cam
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.drivecam
+package.domain = org.test
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -37,7 +37,7 @@ version = 1.0.0
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,certifi,pillow,kivymd,plyer,android,pyjnius,six,https://github.com/kvdroid/Kvdroid/archive/refs/heads/master.zip
+requirements = python3,kivy,pillow,kivymd,plyer,android,pyjnius,six, kvdroid
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
